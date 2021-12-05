@@ -6,7 +6,6 @@ aim = 0
 with open("input.txt", "r") as f:
     for line in f:
         line = line.strip();
-        print(line)
         d, x = line.split()
         x = int(x)
         if d == "up":
@@ -16,7 +15,6 @@ with open("input.txt", "r") as f:
         elif d == "forward":
             hor += x
             dep += aim*x
-        print(hor, dep, aim)
 print(hor, dep, aim)
 print(hor*dep)
 

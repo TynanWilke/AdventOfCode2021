@@ -22,19 +22,16 @@ with open('input.txt', 'r') as f:
         boards.append(board)
 
     def is_winner(board):
-        print("board", board)
         for i in range(0, 5):
-            print("row", board[i])
             if all(c == 'X' for c in board[i]):
                 return True
             col = [board[j][i] for j in range(0, 5)]
-            print("col", col)
             if all(c == 'X' for c in col):
                 return True
         return False
+
     winner = None
     for move in moves:
-        print("move", move)
         for board in boards:
             for i in range(0, 5):
                 board[i] = [c if move != c else 'X' for c in board[i]]
@@ -45,15 +42,10 @@ with open('input.txt', 'r') as f:
             break
         boards = [board for board in boards if not is_winner(board)]
         last_board = boards[0]
-    
-        print("boards", boards)
-        print("len", len(boards))
-    print("WINNER:", winner)
+
     winner = last_board
     v = sum([int(winner[i][j]) if winner[i][j] != 'X' else 0 
              for i in range(0, 5) 
              for j in range(0, 5)])
-    print("last move", move)
-    print(v)
     print(v*int(move))
 

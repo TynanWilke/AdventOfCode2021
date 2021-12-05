@@ -10,4 +10,4 @@ for i, line in enumerate(sys.stdin):
     if len(last3) == 3 and len(curr3) == 3 and sum(curr3) > sum(last3)
         cnt++
     last = depth
-
+print(cnt)

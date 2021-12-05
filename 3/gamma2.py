@@ -21,7 +21,6 @@ with open('input.txt', 'r') as f:
         if len(oxy_bits) == 1:
             break
         assert i != len(oxy_bits[0])
-    print(oxy_bits)
 
     co2_bits = copy.copy(bits)
     i = 0
@@ -35,10 +34,7 @@ with open('input.txt', 'r') as f:
         if len(co2_bits) == 1:
             break
         assert i != len(co2_bits[0])
-    print(co2_bits)
 
     oxyv = sum(int(c)*pow(2, i) for i, c in enumerate(reversed(oxy_bits[0])))
     co2v = sum(int(c)*pow(2, i) for i, c in enumerate(reversed(co2_bits[0])))
-    print(oxyv)
-    print(co2v)
     print(oxyv*co2v)
