@@ -13,12 +13,12 @@ with open('input.txt', 'r') as f:
                 lambda: 0,    \
                 [(i - 1, groups[i]) for i in set(groups.keys())])
         print("After %d day: %s" % (i + 1, ','.join(map(str, sorted(groups.items())))))
-        print(sum(groups.values()))
+        if i == 255:
+            break
         
         if 0 in groups:
             new_fish = groups[0] 
+            groups[7] += new_fish
+            groups[9] = new_fish
             del groups[0]
-        else:
-            new_fish = 0
-        groups[7] += new_fish
-        groups[9] = new_fish
+    print(sum(groups.values()))
