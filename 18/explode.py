@@ -46,6 +46,7 @@ def reduce_pairs(pairs):
                 explode_d = int(m.group(2))
                 explode_rhs = m.group(3)
                 lhs = explode_lhs + str(explode_d + a) + explode_rhs
+            # find leftmost value in rhs
             m = re.match('([^\d]+)([\d]+)(.*)', rhs)
             if m:
                 explode_lhs = m.group(1)
