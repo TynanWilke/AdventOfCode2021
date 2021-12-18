@@ -61,9 +61,7 @@ def reduce_pairs(pairs):
         if r < 10:
             continue
         split_lhs, split_rhs = pairs.split(str(r), 1)
-        remain = (r - r/2) % 1.
-        assert remain == 0.5 or remain == 0.
-        if remain == 0.:
+        if r % 2 == 0:
             ra = rb = int(r/2)
         else:
             ra = int(r/2)
